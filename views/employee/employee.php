@@ -8,15 +8,14 @@
   <link rel="stylesheet" href="<?= ASSETS . '/css/style.css'?>">
 </head>
 <body>
-<?= (isset($employee))? $employee[1]: "error"; ?>
 
   <form class="employee_form" action="">
     <label for="first_name">First name</label>
-      <input type="text" name="first_name" value="<?= (isset($employee))? $employee[1]: ""; ?>">
+      <input type="text" name="first_name" value="<?= (isset($employee)? $employee[1]: ""); ?>">
     <label for="last_name">Last name</label>
-      <input type="text" name="last_name" value="<?= (isset($employee))? $employee[2]: ""; ?>">
+      <input type="text" name="last_name" value="<?= (isset($employee)? $employee[2]: ""); ?>">
     <label for="gender">Gender</label>
-      <input type="text" name="gender" value="<?= (isset($employee))? $employee[3]: ""; ?>">
+      <input type="text" name="gender" value="<?= (isset($employee)? $employee[3]: ""); ?>">
     <input type="submit" name="submit" value="Submit">
   </form>
 </body>

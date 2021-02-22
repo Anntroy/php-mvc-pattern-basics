@@ -34,9 +34,13 @@ function getEmployee($request)
 {
   if (isset($request['id'])) {
     require_once MODELS . "employeeModel.php";
-    $employee = getById($request['id']) ?
-      require_once VIEWS . "employee/employee.php" :
+    if($employee = getById($request['id'])){
+      require_once VIEWS . "employee/employee.php";
+    }
+    else {
+
       error('We can not connect correctly with database');
+    }
   } else {
     error('We can not perform this action whitout correct parameters');
   }

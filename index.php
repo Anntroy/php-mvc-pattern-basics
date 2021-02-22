@@ -1,8 +1,10 @@
 <?php
 
 define("BASE_PATH", dirname(__FILE__));
+require_once 'config/condb.php';
 require_once "config/constants.php";
 require_once "helpers/helpers.php";
+
 
 // This is the entry point of your application, all your application must be executed in
 // the "index.php", in such a way that you must include the controller passed by the URL

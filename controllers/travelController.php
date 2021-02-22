@@ -13,15 +13,15 @@ function getAllTravel()
 {
   require_once MODELS . "travelModel.php";
   $travelAll = get();
-  require_once VIEWS . "employee/employeeDashboard.php";
+  require_once VIEWS . "travel/travelDashboard.php";
 }
 
 function getTravel($request)
 {
   if (isset($request['id'])) {
   require_once MODELS . "travelModel.php";
-    $employee = getById($request['id']) ?
-      require_once VIEWS . "employee/employee.php" :
+    $travel = getById($request['id']) ?
+      require_once VIEWS . "travel/travel.php" :
       error('We can not connect correctly with database');
   } else {
     error('We can not perform this action whitout correct parameters');

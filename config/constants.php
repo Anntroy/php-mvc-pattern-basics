@@ -1,7 +1,6 @@
 <?php
 //You must create a File call condb.php in ./config/. It must containd definitions of three constants DB_HOST, DB_USER and DB_PASSWORD
 //You can see an example in Readme.
-require_once('condb.php');
 
 $condb = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, 'MVC_Pattern_Basics');
 
@@ -20,7 +19,4 @@ define("RESOURCES", BASE_PATH . '/resources/');
 //ASSETS
 define("ASSETS", BASE_PATH . '/assets/');
 
-// if (!$condb) {
-//   die("Connection failed: " . mysqli_connect_error());
-// }
-// echo "Connected successfully";
+
