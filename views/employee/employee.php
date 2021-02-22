@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Employee</title>
-  <link rel="stylesheet" href="<?= ASSETS . '/css/style.css'?>">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
 
-  <form class="employee_form" action="">
+<body>
+  <form class="employee_form" action="index.php" method="GET">
+    <input type="hidden" name="controller" value="employee">
+    <input type="hidden" name="action" value="<?= (isset($employee) ? "updateEmployee" : "createEmployee"); ?>">
+    <input type="hidden" name="id" value="<?= (isset($employee) ? $employee[0] : ""); ?>">
+
     <label for="first_name">First name</label>
-      <input type="text" name="first_name" value="<?= (isset($employee)? $employee[1]: ""); ?>">
+    <input type="text" name="first_name" value="<?= (isset($employee) ? $employee[1] : ""); ?>">
     <label for="last_name">Last name</label>
-      <input type="text" name="last_name" value="<?= (isset($employee)? $employee[2]: ""); ?>">
+    <input type="text" name="last_name" value="<?= (isset($employee) ? $employee[2] : ""); ?>">
     <label for="gender">Gender</label>
-      <input type="text" name="gender" value="<?= (isset($employee)? $employee[3]: ""); ?>">
+    <input type="text" name="gender" value="<?= (isset($employee) ? $employee[3] : ""); ?>">
     <input type="submit" name="submit" value="Submit">
   </form>
 </body>
+
 </html>

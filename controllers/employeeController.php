@@ -34,11 +34,54 @@ function getEmployee($request)
 {
   if (isset($request['id'])) {
     require_once MODELS . "employeeModel.php";
-    if($employee = getById($request['id'])){
+    if ($employee = getById($request['id'])) {
       require_once VIEWS . "employee/employee.php";
-    }
-    else {
+    } else {
 
+      error('We can not connect correctly with database');
+    }
+  } else {
+    error('We can not perform this action whitout correct parameters');
+  }
+}
+
+function updateEmployee($request)
+{
+  if (isset($request['id']) and isset($request['first_name']) and isset($request['last_name']) and isset($request['gender'])) {
+    require_once MODELS . "employeeModel.php";
+    if ($message = updateById($request['id'], $request['first_name'], $request['last_name'], $request['gender'])) {
+      header("Refresh:0; url=index.php?controller=employee&action=getAllEmployees&message=$message");
+    } else {
+
+      error('We can not connect correctly with database');
+    }
+  } else {
+    error('We can not perform this action whitout correct parameters');
+  }
+}
+
+function createEmployee($request)
+{
+  require_once MODELS . "employeeModel.php";
+  if ($message = createNew($request['first_name'], $request['last_name'], $request['gender'])) {
+    header("Location: index.php?controller=employee&action=getAllEmployees&message=$message");
+  } else {
+    error('We can not connect correctly with database');
+  }
+}
+
+function newEmployee()
+{
+  require_once "./views/employee/employee.php";
+}
+
+function deleteEmployee($request)
+{
+  require_once MODELS . "employeeModel.php";
+  if (isset($request['id'])) {
+    if ($message = deleteById($request['id'])) {
+      header("Location: index.php?controller=employee&action=getAllEmployees&message=$message");
+    } else {
       error('We can not connect correctly with database');
     }
   } else {

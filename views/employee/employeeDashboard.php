@@ -25,12 +25,15 @@
                 <td>" . $item[2] . "</td>
                 <td>" . ($item[3] == "M" ? "Male" : "Female") . "</td>
                 <td><a href='index.php?controller=employee&action=getEmployee&id=" . $item[0] . "'>Link</a></td>
+                <td><a href='index.php?controller=employee&action=deleteEmployee&id=" . $item[0] . "'>Delete</a></td>
               </tr>";
         }
       }
       ?>
     </tbody>
   </table>
+  <a href='index.php?controller=employee&action=newEmployee'>New</a>
+  <?= isset($_REQUEST['message'])? "<p>" . $_REQUEST['message']. "</p>": ""; ?>
 </body>
 
 </html>
