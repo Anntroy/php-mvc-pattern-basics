@@ -1,10 +1,5 @@
 <?php
 
-// if (!$condb) {
-//   die("Connection failed: " . mysqli_connect_error());
-// }
-// echo "Connected successfully";
-
 function get()
 {
   try {
@@ -32,12 +27,11 @@ function getById($id)
 }
 
 
-function updateById($id, $first_name, $last_name, $gender)
+function update($request)
 {
-  $condb = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, 'MVC_Pattern_Basics');
   try {
-    $query = "UPDATE employees SET first_name = '$first_name', last_name = '$last_name', gender = '$gender' WHERE emp_no=$id";
-    $executeQuery = mysqli_query($condb, $query);
+    $condb = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, 'MVC_Pattern_Basics');
+    mysqli_query($condb, "UPDATE employees SET first_name = '$request[first_name]', last_name = '$request[last_name]', gender = '$request[gender]' WHERE emp_no=$request[id]");
     return "Employee has been updated successfully";
   } catch (Exception $e) {
     echo 'Excepción capturada: ',  $e->getMessage(), "\n";
@@ -45,15 +39,15 @@ function updateById($id, $first_name, $last_name, $gender)
   }
 }
 
-function createNew($first_name, $last_name, $gender)
+function createNew($request)
 {
-  $condb = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, 'MVC_Pattern_Basics');
   try {
-    $newUser = mysqli_query($condb, "SELECT * FROM employees WHERE first_name = '$first_name' AND last_name = '$last_name' AND gender = '$gender'");
+    $condb = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, 'MVC_Pattern_Basics');
+    $newUser = mysqli_query($condb, "SELECT * FROM employees WHERE first_name = '$request[first_name]' AND last_name = '$request[last_name]' AND gender = '$request[gender]'");
     if (mysqli_num_rows($newUser) > 0) {
       return "This employee already exists";
     } else {
-      mysqli_query($condb, "INSERT INTO employees (first_name, last_name, gender) VALUES ('$first_name', '$last_name', '$gender')");
+      mysqli_query($condb, "INSERT INTO employees (first_name, last_name, gender) VALUES ('$request[first_name]', '$request[last_name]', '$request[gender]')");
       return "New employee created correctly";
     }
   } catch (Exception $e) {
@@ -66,7 +60,6 @@ function deleteById($id)
 {
   try {
     $condb = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, 'MVC_Pattern_Basics');
-
     $exists = mysqli_query($condb, "SELECT * FROM employees WHERE emp_no = $id");
     if (mysqli_num_rows($exists) == 0) {
       return "This employee does not exists";

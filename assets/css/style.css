@@ -91,7 +91,6 @@
   color: #009879;
 }
 
-
 /* Employee form area */
 .employee_form {
   width: 72vw;
@@ -120,17 +119,17 @@ label {
   font-size: 1em;
 }
 
-input[type=text] {
+input[type='text'] {
   border: none;
   font-size: 1em;
 }
 
-input[type=text]:focus {
+input[type='text']:focus {
   outline: none;
-border: 1px solid var(--light-grey);
+  border: 1px solid var(--light-grey);
 }
 
-input[type=submit] {
+input[type='submit'] {
   width: 15%;
   font-size: 1em;
   font-weight: 700;
@@ -140,8 +139,8 @@ input[type=submit] {
   background-color: #f3f3f3;
 }
 
-input[type=submit]:hover {
+input[type='submit']:hover {
   background-color: #009879;
-  opacity:1;
+  opacity: 1;
   color: rgb(248, 246, 246);
 }

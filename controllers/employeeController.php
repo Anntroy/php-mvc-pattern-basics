@@ -37,7 +37,6 @@ function getEmployee($request)
     if ($employee = getById($request['id'])) {
       require_once VIEWS . "employee/employee.php";
     } else {
-
       error('We can not connect correctly with database');
     }
   } else {
@@ -47,12 +46,11 @@ function getEmployee($request)
 
 function updateEmployee($request)
 {
-  if (isset($request['id']) and isset($request['first_name']) and isset($request['last_name']) and isset($request['gender'])) {
+  if (isset($request['id'])) {
     require_once MODELS . "employeeModel.php";
-    if ($message = updateById($request['id'], $request['first_name'], $request['last_name'], $request['gender'])) {
-      header("Refresh:0; url=index.php?controller=employee&action=getAllEmployees&message=$message");
+    if ($message = update($request)) {
+      header("Location: index.php?controller=employee&action=getAllEmployees&message=$message");
     } else {
-
       error('We can not connect correctly with database');
     }
   } else {
@@ -63,7 +61,7 @@ function updateEmployee($request)
 function createEmployee($request)
 {
   require_once MODELS . "employeeModel.php";
-  if ($message = createNew($request['first_name'], $request['last_name'], $request['gender'])) {
+  if ($message = createNew($request)) {
     header("Location: index.php?controller=employee&action=getAllEmployees&message=$message");
   } else {
     error('We can not connect correctly with database');

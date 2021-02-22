@@ -18,5 +18,3 @@ define("RESOURCES", BASE_PATH . '/resources/');
 
 //ASSETS
 define("ASSETS", BASE_PATH . '/assets/');
-
-

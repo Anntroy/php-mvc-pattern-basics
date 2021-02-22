@@ -19,7 +19,7 @@ function getAllTravel()
 function getTravel($request)
 {
   if (isset($request['id'])) {
-  require_once MODELS . "travelModel.php";
+    require_once MODELS . "travelModel.php";
     $travel = getById($request['id']) ?
       require_once VIEWS . "travel/travel.php" :
       error('We can not connect correctly with database');
