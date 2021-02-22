@@ -9,19 +9,21 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body>
+<body class="flex">
   <form class="employee_form" action="index.php" method="GET">
+    <div class="employee_form-div">
     <input type="hidden" name="controller" value="employee">
     <input type="hidden" name="action" value="<?= (isset($employee) ? "updateEmployee" : "createEmployee"); ?>">
     <input type="hidden" name="id" value="<?= (isset($employee) ? $employee[0] : ""); ?>">
 
-    <label for="first_name">First name</label>
+    <label for="first_name">First name: </label>
     <input type="text" name="first_name" value="<?= (isset($employee) ? $employee[1] : ""); ?>">
-    <label for="last_name">Last name</label>
+    <label for="last_name">Last name: </label>
     <input type="text" name="last_name" value="<?= (isset($employee) ? $employee[2] : ""); ?>">
-    <label for="gender">Gender</label>
+    <label for="gender">Gender: </label>
     <input type="text" name="gender" value="<?= (isset($employee) ? $employee[3] : ""); ?>">
     <input type="submit" name="submit" value="Submit">
+    </div>
   </form>
 </body>
 
