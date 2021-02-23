@@ -35,7 +35,7 @@
       ?>
     </tbody>
   </table>
-  <a class='' href='index.php'>Menu</a>
+  <a class='link' href='index.php'>Menu</a>
   <a class="addEmployee" href='index.php?controller=employee&action=newEmployee'><i class="fas fa-user-plus fa-lg"></i></a>
   <?= isset($_REQUEST['message']) ? "<aside id='message' class='error_message'><p class='error'>" . $_REQUEST['message'] . "</p></aside>" : ""; ?>
   <script src="./assets/js/utils.js"></script>

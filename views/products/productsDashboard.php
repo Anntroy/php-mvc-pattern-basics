@@ -35,8 +35,8 @@
       ?>
     </tbody>
   </table>
-  <a class="addSale" href='index.php?controller=products&action=newSale'><i class="fas fa-user-plus fa-lg"></i></a>
-  <?= isset($_REQUEST['id']) ? "<a class='' href='index.php?controller=products&action=getAllProducts'>Dashboard view</a>" : "<a class='' href='index.php'>Menu</a>"; ?>
+  <a class="addSale" href='index.php?controller=products&action=newSale'><i class="fas fa-cart-plus fa-lg"></i></a>
+  <?= isset($_REQUEST['id']) ? "<a class='link' href='index.php?controller=products&action=getAllProducts'>Products</a>" : "<a class='link' href='index.php'>Menu</a>"; ?>
   <?= isset($_REQUEST['message']) ? "<aside id='message' class='error_message'><p class='error'>" . $_REQUEST['message'] . "</p></aside>" : ""; ?>
   <script src="./assets/js/utils.js"></script>
 </body>

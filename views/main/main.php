@@ -11,7 +11,7 @@
 <body>
   <section>
     <ul class="link_list">
-      <li><a class="link" href="index.php?controller=employee&action=getAllEmployees">Employees</a></li>
+      <li><a class="link link_employees" href="index.php?controller=employee&action=getAllEmployees">Employees</a></li>
       <li><a class="link" href="index.php?controller=products&action=getAllProducts">Products</a></li>
     </ul>
   </section>
