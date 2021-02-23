@@ -40,7 +40,7 @@
       <input type="submit" name="submit" value="Submit">
     </div>
   </form>
-  <a class="addEmployee" href="index.php?controller=products&action=getAllProducts">Products</a>
+  <a class="link" href="index.php?controller=products&action=getAllProducts">Products</a>
 </body>
 
 </html>
