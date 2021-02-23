@@ -18,17 +18,17 @@
       <label for="employee">Employee: </label>
       <select name="employee">
         <?php
-        if (isset($employees)){
+        if (isset($employees)) {
           foreach ($employees as $employee) {
             echo "<option value='$employee[0]'>$employee[1]</option>";
           }
         }
         ?>
       </select>
-        <label for="product">Product name: </label>
+      <label for="product">Product name: </label>
       <select name="product">
-      <?php
-        if (isset($products)){
+        <?php
+        if (isset($products)) {
           foreach ($products as $product) {
             echo "<option value='$product[0]'>$product[1]</option>";
           }
@@ -40,5 +40,7 @@
       <input type="submit" name="submit" value="Submit">
     </div>
   </form>
+  <a class="addEmployee" href="index.php?controller=products&action=getAllProducts">Products</a>
 </body>
+
 </html>
