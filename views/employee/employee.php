@@ -28,6 +28,6 @@
       <input type="submit" name="submit" value="Submit">
     </div>
   </form>
+  <a class="addEmployee" href="index.php?controller=employee&action=getAllEmployees">Employees</a>
 </body>
-
 </html>
