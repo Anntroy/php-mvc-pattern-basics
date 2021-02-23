@@ -39,5 +39,4 @@
   <?= isset($_REQUEST['message']) ? "<aside id='message' class='error_message'><p class='error'>" . $_REQUEST['message'] . "</p></aside>" : ""; ?>
   <script src="./assets/js/utils.js"></script>
 </body>
-
 </html>
