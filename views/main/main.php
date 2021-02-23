@@ -12,7 +12,7 @@
   <section>
     <ul class="link_list">
       <li><a class="link" href="index.php?controller=employee&action=getAllEmployees">Employees</a></li>
-      <li><a class="link" href="index.php?controller=travel&action=getAllTravel">Travel</a></li>
+      <li><a class="link" href="index.php?controller=products&action=getAllProducts">Products</a></li>
     </ul>
   </section>
 </body>

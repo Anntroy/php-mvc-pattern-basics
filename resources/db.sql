@@ -37,7 +37,7 @@ CREATE TABLE sales(
     FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
     FOREIGN KEY (prod_no) REFERENCES products (prod_no),
     PRIMARY KEY (sale_no, emp_no, prod_no)
-)
+);
 
 
 INSERT INTO employees (first_name, last_name, gender) VALUES
