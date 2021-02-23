@@ -28,16 +28,35 @@ function getProduct($request)
     error('We can not perform this action whitout correct parameters');
   }
 }
-function getProduct($request)
+
+function getSalesEmployee($request)
 {
   if (isset($request['id'])) {
     require_once MODELS . "productsModel.php";
-    if ($products = getProductById($request['id'])) {
+    if ($products = getEmployeeSalesById($request['id'])) {
       require_once VIEWS . "products/productsDashboard.php";
     } else {
       error('We can not connect correctly with database');
     }
   } else {
     error('We can not perform this action whitout correct parameters');
+  }
+}
+
+function newSale()
+{
+  require_once MODELS . "productsModel.php";
+  $employees = getAllEmployees();
+  $products =  getAll();
+  require_once VIEWS . "products/product.php";
+}
+
+function createNewSale($request)
+{
+  require_once MODELS . "productsModel.php";
+  if ($message = createNew($request)) {
+    header("Location: index.php?controller=products&action=getAllProducts&message=$message");
+  } else {
+    error('We can not connect correctly with database');
   }
 }
