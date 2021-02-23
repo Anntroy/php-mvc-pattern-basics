@@ -6,12 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Main</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
   <section>
-    <ul>
-      <li><a href="index.php?controller=employee&action=getAllEmployees">Employees</a></li>
-      <li><a href="index.php?controller=travel&action=getAllTravel">Travel</a></li>
+    <ul class="link_list">
+      <li><a class="link" href="index.php?controller=employee&action=getAllEmployees">Employees</a></li>
+      <li><a class="link" href="index.php?controller=travel&action=getAllTravel">Travel</a></li>
     </ul>
   </section>
 </body>
