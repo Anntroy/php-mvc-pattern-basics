@@ -13,7 +13,7 @@
   <p>
     <?= isset($errorMsg) ? $errorMsg : "Fatal error" ?>
   </p>
-  <a href="index.php">return menu</a>
+  <a class="link" href="index.php">Menu</a>
 </body>
 
 </html>

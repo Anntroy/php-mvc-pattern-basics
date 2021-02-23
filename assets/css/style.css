@@ -55,25 +55,47 @@ li {
   background-color: #009879;
   border: 2px solid #009879;
   color: rgb(248, 246, 246);
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  position: fixed;
+  top: 12vh;
+  left: 4vh;
 }
 
-/* Employees table area */
-
-.addEmployee {
+.link_employees {
   position: fixed;
   top: 4vh;
   left: 4vh;
 }
 
-.flex {
-  display: flex;
-  justify-content: center;
+/* Icons */
+
+.addEmployee {
+  position: fixed;
+  top: 4vh;
+  left: 6vh;
 }
 
 .fas {
   color: #616363;
   padding-left: 10px;
 }
+
+.addSale {
+  position: fixed;
+  top: 4vh;
+  left: 4vh;
+}
+
+/* Table area */
+
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
 
 .content-table {
   width: 40%;
@@ -144,12 +166,12 @@ label {
   font-size: 1em;
 }
 
-input[type='text'] {
+input[type='text'], input[type='number']{
   border: none;
   font-size: 1em;
 }
 
-input[type='text']:focus {
+input[type='text']:focus, input[type='number']:focus {
   outline: none;
   border: 1px solid var(--light-grey);
 }
