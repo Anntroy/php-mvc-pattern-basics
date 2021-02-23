@@ -45,10 +45,14 @@ function getSalesEmployee($request)
 
 function newSale()
 {
-  require_once MODELS . "productsModel.php";
-  $employees = getAllEmployees();
-  $products =  getAll();
-  require_once VIEWS . "products/product.php";
+  try {
+    require_once MODELS . "productsModel.php";
+    $employees = getAllEmployees();
+    $products =  getAll();
+    require_once VIEWS . "products/product.php";
+  } catch (Throwable $th) {
+    error('We can not connect correctly with database');
+  }
 }
 
 function createNewSale($request)
